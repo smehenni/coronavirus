@@ -6,155 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta data-rh="true" property="og:image" content="https://smehenni.github.io/coviz/assets/og-img.jpg" />
 	<meta data-rh="true" name="twitter:image:src" content="https://smehenni.github.io/coviz/assets/og-img.jpg" />
-    <title>Coviz - Map of Travel Restrictions</title>
-	<link href="https://fonts.googleapis.com/css?family=Sen:400,800&display=swap" rel="stylesheet">
+    <title>Coviz - Visualization of Covid-19 data for Canada and Quebec</title>
+
     <meta name="description" content="Coviz is a collection of data visualizations around the COVID-19 pandemic.">
-	<meta name="author" content="Sam Mehenni">
+    <meta name="author" content="Sam Mehenni">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 	<style>
-		body {
-    	margin: 0;
-		font-family: 'Sen', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		a {
+  		color: #EE2121 !important;
 		}
 
-		.container {
-  			position: relative
+		.container-fluid{
+			overflow: hidden;
 		}
-
-		iframe {
-    	display: block;
-    	background: #F5F5F5;
-    	border: none;        
-    	height: 100vh;
-    	width: 100vw;
-		z-index: 0;
-		}
-
-		button {
-			font-family: 'Sen', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		}
-
-		.close {
-			background-color: #EBEBEB;
-			padding: 1em 1em;
-			border: 1px solid #DDDDDD;
-			color: #999999;
-		}
-
-		.about {
-			box-shadow: 0px 0px 25px -12px rgba(168, 164, 164, 0.5);
-			background-color: #FCCBC6;
-			padding: 2em 8em;
-			color: #7A0177;
-			z-index: 1;
-			border: none;
-		}
-
-		.box {
-		box-shadow: 0px 0px 25px -12px rgba(0,0,0,0.5);
-  		position: absolute;
-  		bottom: 0;
-  		left: 0;
-  		width: 400px;
-  		height: 400px;
-  		background-color: #F5F5F5;
-		z-index: 2;
-		}
-
-		h2 {
-			font-weight: 800;
-			padding-top: 2rem;
-			padding-left: 2rem;
-		}
-
-		p {
-			font-weight: 400;
-			padding-top: 1rem;
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
-
-		.legend {
-		position: absolute;
-  		top: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-  		width: 600px;
-		height: 80px;
-		z-index: 3;
-		}
-
-		.my-legend .legend-scale ul li {
-  display: inline-block;
-  font-size: 80%;
-  list-style: none;
-  line-height: 20px;
-  vertical-align: text-top;
-  color: #777777;
-}
-.my-legend ul.legend-labels li span {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  margin-right: 5px;
-  margin-left: 10px;
-}
 
 	</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161052397-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-161052397-1');
+</script>
   </head>
   <body>
 
-    <div class="container">
-		<iframe title="COVID-19 - Map of Travel Restrictions" aria-label="World choropleth map" src="https://datawrapper.dwcdn.net/kjRSI/2/" scrolling="no" frameborder="0" style="border: none;"></iframe>
-		<div class="legend">
-			<div class='my-legend'>
-				<div class='legend-scale'>
-				  <ul class='legend-labels'>
-<li><span style='background:#7A0177;'></span></li>
-<li>Regional lockdown</li>
-<li><span style='background:#B91787;'></span></li>
-<li>All foreign nationals</li>
-<li><span style='background:#E64E99;'></span></li>
-<li>Specific countries</li>
-<li><span style='background:#F984AB;'></span></li>
-<li>Transit</li><br>
-<li><span style='background:#FBACB9;'></span></li>
-<li>Quarantine Required</li>
-<li><span style='background:#FCCBC6;'></span></li>
-<li>Other</li>
-<li><span style='background:#FCE36A;'></span></li>
-<li>No restrictions</li>
-<li><span style='background:#E0E0E0;'></span></li>
-<li>Not available</li>
-				  </ul>
-				  </div></div>
+    <div class="container-fluid">
+		<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
 		</div>
-		<div id="aboutbox" class="box"><button class="close" onclick="btnFunction()" style="position: absolute; right: 0;">CLOSE</button>
-		<h2>Map of Travel Restrictions</h2>
-		<p>This map shows the restriction statuses of most countries around the world. The data is collected from different news articles and government travel advisories. Error? Update? Press? Get in touch.<br><br>Last update was made on March 19, 2020.<br><br>Created by Sam Mehenni.</p></div>
-		<button class="about" onclick="btnFunctionOpen()" style="position: absolute; left: 0; bottom: 0;">ABOUT</button>
+		<div class="col-md-8" style="background-color: #f5f5f5; padding-bottom: 3rem; border-radius: 8px;">
+					<img src="assets/coviz.png" width="160px" style="padding: 3rem 0;">
+					<p><b>Coviz</b> is a collection of data visualizations around the COVID-19 pandemic. Data are collected from the <a class="ahead" href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html#a1" target="_blank">Canadian government Public Health website</a>, the <a class="ahead" href="https://www.quebec.ca/en/health/health-issues/a-z/2019-coronavirus/situation-coronavirus-in-quebec/" target="_blank">Quebec government coronavirus page</a>, and the <a class="ahead" href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports" target="_blank">Data Repository by Johns Hopkins CSSE</a>.</p>
+					<p>Charts are automated using <a class="ahead" href="https://www.datawrapper.de/" target="_blank">Datawrapper</a>. You can download all datasets (in .csv) by clicking the "Get the data" link below visualizations.</p>
+					<p>Created by <a class="ahead" href="http://mehenni.cargo.site/" target="_blank">Sam Mehenni</a>, a concerned citizen and data science enthusiast — <a class="ahead" href="https://www.linkedin.com/in/mehenni/" target="_blank">Get in touch</a>.</p>
+				</div>
+		<div class="col-md-2">
+		</div>
 	</div>
+	<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<h2>🇨🇦 Canada</h2>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<h5>Confirmed cases in Canada</h5>
+			<p>Last update: 19/03/2020</p>
+			<iframe title="Covid-19 Cases - Canada" aria-label="Table" id="datawrapper-chart-jBonp" src="https://datawrapper.dwcdn.net/jBonp/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-bottom: 2rem;" height="490"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+			</script>
+		</div>
+		<div class="col-md-5">
+			<h5>Select a province:</h5>
+			<iframe title="Covid-19 Cases - Canada" aria-label="Column Chart" id="datawrapper-chart-ID4S3" src="https://datawrapper.dwcdn.net/ID4S3/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin: 1rem 0;" height="500"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
 
-	<script>
-	function btnFunction() {
-		var x = document.getElementById("aboutbox");
-		if (x.style.display === "none") {
-		  x.style.display = "block";
-		} else {
-		  x.style.display = "none";
-		}	
-	  }
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<hr class="col-12" style="padding-bottom: 2rem;" />
+			<h2>🇲🇶 Québec</h2>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-3">
+			<h5>Confirmed cases in Quebec</h5>
+			<p>Last update: 19/03/2020</p>
+			<iframe title="Covid-19 Cases - Quebec" aria-label="Table" id="datawrapper-chart-rGsdM" src="https://datawrapper.dwcdn.net/rGsdM/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-bottom: 2rem;" height="453"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+			</script>			</script>
+		</div>
+		<div class="col-md-5">
+			<h5>Confirmed cases by region (Quebec)</h5>
+			<iframe title="Covid-19 Cases - Quebec" aria-label="Stacked Bars" id="datawrapper-chart-IUUxw" src="https://datawrapper.dwcdn.net/IUUxw/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin: 1rem 0;" height="526"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="col-12 mt-5"></div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<hr class="col-12" style="padding-bottom: 2rem;" />
+			<h2>🌏 World</h2>
+			<div class="col-12 mt-5"></div>
+			<h5>Countries with the most confirmed cases</h5>
+			<p>Last update: 19/03/2020 — Excluding China</p>
+			<iframe title="[ Insert title here ]" aria-label="Interactive line chart" id="datawrapper-chart-ruwJ3" src="https://datawrapper.dwcdn.net/ruwJ3/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-bottom: 2rem;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+			</script>
+			<div class="col-12 mt-5"></div>
+			<h5>Proportion of all active* cases by country</h5>
+			<p>Last update: 19/03/2020 - *recovered cases and deaths were removed</p>
+			<iframe title="[ Insert title here ]" aria-label="Interactive line chart" id="datawrapper-chart-NfT0c" src="https://datawrapper.dwcdn.net/NfT0c/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-bottom: 2rem;" height="500"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+			</script>
 
-	  function btnFunctionOpen() {
-		var x = document.getElementById("aboutbox");
-		if (x.style.display === "none") {
-		  x.style.display = "block";
-		} else {
-		  x.style.display = "none";
-		}	
-	  }	  
-	 
-	  </script>
+
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
